@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  resources :trips
+  resources :carriers
+  resources :rockets
+  resources :planets
+  resources :bookings
     root 'home#index'
     
     resources :users
