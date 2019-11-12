@@ -10,7 +10,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_12_102018) do
+ActiveRecord::Schema.define(version: 2019_11_12_105208) do
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer "price"
+    t.integer "rating"
+    t.integer "user_id"
+    t.integer "trip_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "carriers", force: :cascade do |t|
+    t.string "name"
+    t.string "range"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "planets", force: :cascade do |t|
+    t.string "name"
+    t.integer "distance_from_earth"
+    t.integer "gravity"
+    t.string "hostility"
+    t.integer "population"
+    t.boolean "breathable_atmosphere"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "rockets", force: :cascade do |t|
+    t.string "nickname"
+    t.integer "speed"
+    t.integer "passenger_capacity"
+    t.string "ship_model_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "trips", force: :cascade do |t|
+    t.integer "destination_id"
+    t.integer "origin_id"
+    t.integer "rocket_id"
+    t.integer "carrier_id"
+    t.datetime "takeoff_time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email"
