@@ -72,13 +72,6 @@ ul.topnav li {
     }
 }
 
-body {
-
-    /* background-color: var(--bg-color); */
-
-
-}
-
 * {
 
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -308,9 +301,7 @@ div.things {
 
 div.date_container {
 
-    /* width: 100%; */
     display: block;
-    /* float: none; */
     margin-right: 22vw;
     margin-left: 22vw;
     
