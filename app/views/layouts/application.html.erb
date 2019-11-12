@@ -33,13 +33,18 @@
                 <%= link_to "Log In", login_path, class: 'login'  %>
 
             </div>
+            
 
         <% end%>
 
         <h1>Spacescanner</h1>
 
-        <%= render "/layouts/search_trips" %>
-        
+        <% if request.path == "/"%>
+
+            <%= render "/layouts/search_trips" %>
+
+        <% end %>
+
         <%= yield %>
 
     </body>
