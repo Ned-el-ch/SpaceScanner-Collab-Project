@@ -162,3 +162,156 @@ height: 46px;
     color: white;
     
 }
+
+input:not(:focus) {
+
+    background-color: rgb(223, 223, 223);
+    
+}
+
+input:focus {
+
+    
+    border: 3px solid #555;
+    background-color: rgb(255, 255, 255);
+
+}
+
+input[type=text] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+input[type=password] {
+
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: 20px;
+    
+}
+
+input[type=number] {
+
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: 20px;
+    
+}
+
+input[type=submit] {
+
+    width: 50%;
+    text-align: center;
+    background-color: var(--heading-color);
+    border: none;
+    color: white;
+    padding: 20px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    margin: 3%;
+    
+}
+
+#origin_id {
+
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0);
+    border: solid 3px var(--heading-color);
+    color: var(--font-color);
+    padding: 30px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 1%;
+    width: 90%;
+
+    /* float: left; */
+
+}
+
+#destination_id {
+
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0);
+    border: solid 3px var(--heading-color);
+    color: var(--font-color);
+    padding: 30px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 1%;
+    width: 90%;
+    /* float: left; */
+
+}
+
+label.input_label {
+
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.trip_search {
+
+    display: block;
+    text-align: center;
+    width: 100%;
+    
+}
+
+div.thing {
+
+    display: block;
+    margin-right: 22vw;
+    margin-left: 22vw;
+    margin-bottom: 1vh;
+    /* width: 60%; */
+}
+
+div.things {
+    /* padding: 10%; */
+    display: block;
+    float: none;
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin-bottom: 3vh;
+    margin-top: 5vh;
+}
+
+#date_takeoff_date_1i, #date_takeoff_date_2i, #date_takeoff_date_3i {
+
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0);
+    border: solid 3px var(--heading-color);
+    color: var(--font-color);
+    padding: 30px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 1%;
+    width: 90%;
+    
+}
+
+div.date_container {
+
+    /* width: 100%; */
+    display: block;
+    /* float: none; */
+    margin-right: 22vw;
+    margin-left: 22vw;
+    
+}

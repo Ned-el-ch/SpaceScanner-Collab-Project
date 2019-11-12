@@ -28,7 +28,7 @@
         <% else %>
 
             <div class="topnav">
-
+                <a class="active" href="/">Home</a>
                 <%= link_to "Sign Up", signup_path, class: 'signup'  %>
                 <%= link_to "Log In", login_path, class: 'login'  %>
 
@@ -38,6 +38,8 @@
 
         <h1>Spacescanner</h1>
 
+        <%= render "/layouts/search_trips" %>
+        
         <%= yield %>
 
     </body>

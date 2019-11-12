@@ -7,4 +7,11 @@ class ApplicationController < ActionController::Base
         @current_user = nil
       end
     end
+
+    def all_planets
+
+        Planet.all.sort_by{|p| p.name}
+        
+    end
+    
   end
