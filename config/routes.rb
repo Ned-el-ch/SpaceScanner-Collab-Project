@@ -13,5 +13,5 @@ Rails.application.routes.draw do
     get 'login', to: 'sessions#new', as: 'login'
     get 'logout', to: 'sessions#destroy', as: 'logout'
     get 'trips', to: 'users#trips'#, as: 'trips'
-    get 'account', to: 'users#account'#, as: 'account'
+    get 'account', to: 'users#show'#, as: 'account'
 end
