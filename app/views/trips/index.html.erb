@@ -22,40 +22,40 @@
 
             <div class="collapsible-content">
 
-            <div class="trip_stats">
+                <div class="trip_stats">
 
-                    <span class="stat_item">
+                        <span class="stat_item">
 
-                        <%= label_tag "Distance" %>
-                        <%= trip[:distance] %> Parsecs
+                            <%= label_tag "Distance" %>
+                            <%= trip[:distance] %> Parsecs
 
-                    </span>
+                        </span>
 
-                    <span class="stat_item">
+                        <span class="stat_item">
 
-                        <%= label_tag "Speed" %>
-                        <%= trip[:rocket].speed %> Parsecs/hr
+                            <%= label_tag "Speed" %>
+                            <%= trip[:rocket].speed %> Parsecs/hr
 
-                    </span>
+                        </span>
 
-                    <span class="stat_item">
+                        <span class="stat_item">
 
-                        <%= label_tag "Duration" %>
-                        <%= trip[:duration] %> hours
+                            <%= label_tag "Duration" %>
+                            <%= trip[:duration] %> hours
 
-                    </span>
+                        </span>
+
+                    </div>
+
+                    <div class="carrier_ship">
+
+                        You are flying with <%= link_to trip[:carrier].name, carrier_slug_path(trip[:carrier].name) %> on the <%= link_to trip[:rocket].name, rocket_slug_path("#{trip[:rocket].name}") %>
+
+                    </div>
+
+                    
 
                 </div>
-
-                <div class="carrier_ship">
-
-                    You are flying with <%= link_to trip[:carrier].name, carrier_path(trip[:carrier]) %> on the <%= link_to trip[:rocket].name, rocket_slug_path("#{trip[:rocket].name}") %>
-
-                </div>
-
-                
-
-            </div>
 
         </div>
 

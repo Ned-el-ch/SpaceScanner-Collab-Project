@@ -64,7 +64,7 @@ Carrier.where.not(id: Carrier.group(:name).select("min(id)")).destroy_all
 
 end
 
-30.times do |i|
+3000.times do |i|
 
     Trip.create(
 
@@ -76,11 +76,13 @@ end
 
     )
 
+    puts "Trip ##{i}"
+
 end
 
 User.all.each do |user|
 
-    rand(1..10).times do |i|
+    rand(3..15).times do |i|
 
         Booking.create(
 
@@ -94,27 +96,3 @@ User.all.each do |user|
     end
 
 end
-
-# 20.times do |i|
-
-#     BankCard.create(
-
-#         long_card_number: Faker::Business.credit_card_number,
-#         ccv_code: Faker::Stripe.ccv,
-#         expiry_month: Faker::Stripe.month,
-#         expiry_year: Faker::Stripe.year,
-#         user: User.all.sample,
-#         billing_address: Faker::Address.full_address
-
-#     )
-
-# end
-
-
-
-
-
-
-
-
-
