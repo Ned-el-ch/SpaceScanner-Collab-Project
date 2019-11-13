@@ -5,12 +5,13 @@ Rocket.destroy_all
 Trip.destroy_all
 User.destroy_all
 
-10.times do |i|
+12.times do |i|
 
     User.create(
 
         email: Faker::Internet.email,
-        password: "pass"
+        password: "pass",
+        name: Faker::Movies::HarryPotter.character
 
     )
 

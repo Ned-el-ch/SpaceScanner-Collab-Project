@@ -1,1 +1,14 @@
-<p>displaying my trips</p>
+<h2><%= @user.name %></h2>
+
+<p>All upcoming trips:</p>
+<br>
+<p><% @trips.each do |trip| %></p>
+    <p>Flying from <%= link_to trip[:origin].name, planet_path(trip[:origin]) %> to <%= link_to trip[:destination].name, planet_path(trip[:destination]) %></p>
+    <p>You are flying with <%= link_to trip[:carrier].name, carrier_path(trip[:carrier]) %> on the <%= link_to trip[:rocket].nickname, rocket_path(trip[:rocket]) %>.</p>
+    <p>Distance: <%= trip[:distance] %> Parsecs</p>
+    <p>Speed: <%= trip[:rocket].speed %> Parsecs/hr</p>
+    <p>Duration: <%= trip[:duration] %> hours</p>
+    <br>
+    <br>
+
+<% end %>
