@@ -5,7 +5,7 @@
 <p><% @trips.each do |trip| %></p>
     Flying from <%= link_to trip[:origin].name, planet_slug_path("#{trip[:origin].name}")%> to <%= link_to trip[:destination].name, planet_slug_path("#{trip[:destination].name}")%>
 
-    <p>You are flying with <%= link_to trip[:carrier].name, carrier_path(trip[:carrier]) %> on the <%= link_to trip[:rocket].nickname, rocket_path(trip[:rocket]) %>.</p>
+    <p>You are flying with <%= link_to trip[:carrier].name, carrier_path(trip[:carrier]) %> on the <%= link_to trip[:rocket].name, rocket_slug_path("#{trip[:rocket].name}") %>.</p>
     <p>Distance: <%= trip[:distance] %> Parsecs</p>
     <p>Speed: <%= trip[:rocket].speed %> Parsecs/hr</p>
     <p>Duration: <%= trip[:duration] %> hours</p>

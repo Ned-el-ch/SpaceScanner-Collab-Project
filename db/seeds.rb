@@ -55,7 +55,7 @@ Carrier.where.not(id: Carrier.group(:name).select("min(id)")).destroy_all
 
     Rocket.create(
 
-        nickname: Faker::Movies::StarWars.vehicle,
+        name: Faker::Movies::StarWars.vehicle,
         ship_model_name: Faker::Movies::StarWars.droid,
         speed: rand(0.01..100.0),
         passenger_capacity: (rand(4..20) * 10)
