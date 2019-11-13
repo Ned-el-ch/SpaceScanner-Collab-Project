@@ -1,15 +1,52 @@
 <h2><%= @user.name %></h2>
 
-<p>All upcoming trips:</p>
-<br>
-<p><% @trips.each do |trip| %></p>
-    Flying from <%= link_to trip[:origin].name, planet_slug_path("#{trip[:origin].name}")%> to <%= link_to trip[:destination].name, planet_slug_path("#{trip[:destination].name}")%>
+<h3>All upcoming trips:</h3>
 
-    <p>You are flying with <%= link_to trip[:carrier].name, carrier_slug_path(trip[:carrier].name) %> on the <%= link_to trip[:rocket].name, rocket_slug_path("#{trip[:rocket].name}") %>.</p>
-    <p>Distance: <%= trip[:distance] %> Parsecs</p>
-    <p>Speed: <%= trip[:rocket].speed %> Parsecs/hr</p>
-    <p>Duration: <%= trip[:duration] %> hours</p>
+<div class="my_trips">
 
-    <br/>
-    <br/>
-<% end %>
+    <% @trips.each do |trip| %>
+
+        <div class="trip">
+
+            <div class="to_from">
+
+                Trip from <%= link_to trip[:origin].name, planet_slug_path("#{trip[:origin].name}")%> to <%= link_to trip[:destination].name, planet_slug_path("#{trip[:destination].name}")%>
+
+            </div>
+
+            <div class="carrier_ship">
+
+                You are flying with <%= link_to trip[:carrier].name, carrier_path(trip[:carrier]) %> on the <%= link_to trip[:rocket].name, rocket_slug_path("#{trip[:rocket].name}") %>
+
+            </div>
+
+            <div class="trip_stats">
+
+                <span class="stat_item">
+
+                    <%= label_tag "Distance" %>
+                    <%= trip[:distance] %> Parsecs
+
+                </span>
+
+                <span class="stat_item">
+
+                    <%= label_tag "Speed" %>
+                    <%= trip[:rocket].speed %> Parsecs/hr
+
+                </span>
+
+                <span class="stat_item">
+
+                    <%= label_tag "Duration" %>
+                    <%= trip[:duration] %> hours
+
+                </span>
+
+            </div>
+
+        </div>
+
+    <% end %>
+
+</div>
