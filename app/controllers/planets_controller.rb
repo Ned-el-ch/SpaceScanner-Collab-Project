@@ -1,5 +1,6 @@
 class PlanetsController < ApplicationController
 
     def show
-        @planet = Planets 
+        @planet = Planet.find(params[:id])
+    end 
 end
