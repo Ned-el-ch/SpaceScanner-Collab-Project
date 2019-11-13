@@ -64,7 +64,7 @@ Carrier.where.not(id: Carrier.group(:name).select("min(id)")).destroy_all
 
 end
 
-30.times do |i|
+3000.times do |i|
 
     Trip.create(
 
@@ -94,6 +94,8 @@ User.all.each do |user|
     end
 
 end
+
+
 
 # 20.times do |i|
 
