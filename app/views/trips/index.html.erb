@@ -4,44 +4,55 @@
 
 <div class="my_trips">
 
-    <% @trips.each do |trip| %>
+    <% @trips.each_with_index do |trip, index| %>
 
         <div class="trip">
 
-            <div class="to_from">
+            <%# <input id="collapsible" class="toggle" type="checkbox"> %>
+            <%= check_box_tag "collapsible#{index + 1}", class: "toggle" %>
 
-                Trip from <%= link_to trip[:origin].name, planet_slug_path("#{trip[:origin].name}")%> to <%= link_to trip[:destination].name, planet_slug_path("#{trip[:destination].name}")%>
+            <label for="collapsible<%= "#{index + 1}" %>" class="lbl-toggle to_from">
 
-            </div>
+                <span class="to_from">
 
-            <div class="carrier_ship">
-
-                You are flying with <%= link_to trip[:carrier].name, carrier_path(trip[:carrier]) %> on the <%= link_to trip[:rocket].name, rocket_slug_path("#{trip[:rocket].name}") %>
-
-            </div>
-
-            <div class="trip_stats">
-
-                <span class="stat_item">
-
-                    <%= label_tag "Distance" %>
-                    <%= trip[:distance] %> Parsecs
+                    Trip from <%= link_to trip[:origin].name, planet_slug_path("#{trip[:origin].name}")%> to <%= link_to trip[:destination].name, planet_slug_path("#{trip[:destination].name}")%>
 
                 </span>
 
-                <span class="stat_item">
+            </label>
 
-                    <%= label_tag "Speed" %>
-                    <%= trip[:rocket].speed %> Parsecs/hr
+            <div class="collapsible-content">
 
-                </span>
+                <div class="carrier_ship">
 
-                <span class="stat_item">
+                    You are flying with <%= link_to trip[:carrier].name, carrier_path(trip[:carrier]) %> on the <%= link_to trip[:rocket].name, rocket_slug_path("#{trip[:rocket].name}") %>
 
-                    <%= label_tag "Duration" %>
-                    <%= trip[:duration] %> hours
+                </div>
 
-                </span>
+                <div class="trip_stats">
+
+                    <span class="stat_item">
+
+                        <%= label_tag "Distance" %>
+                        <%= trip[:distance] %> Parsecs
+
+                    </span>
+
+                    <span class="stat_item">
+
+                        <%= label_tag "Speed" %>
+                        <%= trip[:rocket].speed %> Parsecs/hr
+
+                    </span>
+
+                    <span class="stat_item">
+
+                        <%= label_tag "Duration" %>
+                        <%= trip[:duration] %> hours
+
+                    </span>
+
+                </div>
 
             </div>
 
