@@ -22,13 +22,7 @@
 
             <div class="collapsible-content">
 
-                <div class="carrier_ship">
-
-                    You are flying with <%= link_to trip[:carrier].name, carrier_path(trip[:carrier]) %> on the <%= link_to trip[:rocket].name, rocket_slug_path("#{trip[:rocket].name}") %>
-
-                </div>
-
-                <div class="trip_stats">
+            <div class="trip_stats">
 
                     <span class="stat_item">
 
@@ -52,6 +46,14 @@
                     </span>
 
                 </div>
+
+                <div class="carrier_ship">
+
+                    You are flying with <%= link_to trip[:carrier].name, carrier_path(trip[:carrier]) %> on the <%= link_to trip[:rocket].name, rocket_slug_path("#{trip[:rocket].name}") %>
+
+                </div>
+
+                
 
             </div>
 

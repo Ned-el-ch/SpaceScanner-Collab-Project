@@ -21,8 +21,8 @@
     --font-color: #e1e1ff;
     --bg-color: #161625;
     --bg-image: linear-gradient(to bottom right, rgb(46, 46, 73), rgb(12, 12, 20));
-    --heading-color: #5c87fd;
-    --logo-color:  #17EF55;
+    --heading-color: rgb(223, 164, 3);
+    --logo-color:  rgb(223, 164, 3);
 
 }
 
