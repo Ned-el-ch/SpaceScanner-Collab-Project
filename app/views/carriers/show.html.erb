@@ -1,0 +1,10 @@
+<h2><%=@carrier.name%></h2>
+
+<p>Range: <%= @carrier.range %></p>
+<br>
+<p>Listed flights:</p><br>
+<% @carrier.trips.each do |trip| %>
+    <ul>
+    <%= link_to "#{Planet.find(trip.origin_id).name} to #{Planet.find(trip.destination_id).name}", trip_path(trip)%>
+    </ul>
+<% end %>
