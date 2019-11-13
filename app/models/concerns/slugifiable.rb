@@ -13,7 +13,8 @@ module Slugifiable
   
     module ClassMethods
       def find_by_slug(slug)
-        self.all.find{ |instance| instance.slug == slug }
+        checked_slug = slug.gsub(" ", "-").downcase
+        self.all.find{ |instance| instance.slug == checked_slug }
       end
     end
   end

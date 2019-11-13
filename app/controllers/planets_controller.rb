@@ -1,7 +1,10 @@
 class PlanetsController < ApplicationController
 
     def slug
-        @planet = Planet.find_by_slug(params[:slug])
+        # byebug
+        name = params[:slug].gsub(" ", "-").downcase
+        # byebug
+        @planet = Planet.find_by_slug(name)
         render "/planets/show"
     end
 end

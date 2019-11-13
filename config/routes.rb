@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
+    get '/planets/:slug', to: 'planets#slug', as: 'planet_slug'
   resources :trips
   resources :carriers
   resources :rockets
-  resources :planets 
+#   resources :planets, only: [index]
   resources :bookings
     root 'home#index'
     
@@ -15,5 +16,5 @@ Rails.application.routes.draw do
     get 'trips', to: 'users#trips'#, as: 'trips'
     get 'account', to: 'users#show'#, as: 'account'
 
-    get '/planets/:slug', to: 'planets#slug'
+
 end
