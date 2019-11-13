@@ -4,44 +4,56 @@
 
 <div class="my_trips">
 
-    <% @trips.each do |trip| %>
+    <% @trips.each_with_index do |trip, index| %>
 
         <div class="trip">
 
-            <div class="to_from">
+            <input id="collapsible<%= "#{index}" %>" class="toggle" type="checkbox">
 
-                Trip from <%= link_to trip[:origin].name, planet_slug_path("#{trip[:origin].name}")%> to <%= link_to trip[:destination].name, planet_slug_path("#{trip[:destination].name}")%>
+            <label for="collapsible<%= "#{index}" %>" class="lbl-toggle">
 
-            </div>
+                <span class="to_from">
 
-            <div class="carrier_ship">
+                    Trip from <%= link_to trip[:origin].name, planet_slug_path("#{trip[:origin].name}")%> to <%= link_to trip[:destination].name, planet_slug_path("#{trip[:destination].name}")%>
 
-                You are flying with <%= link_to trip[:carrier].name, carrier_path(trip[:carrier]) %> on the <%= link_to trip[:rocket].name, rocket_slug_path("#{trip[:rocket].name}") %>
+                </span>
 
-            </div>
+            </label>
+
+            <div class="collapsible-content">
 
             <div class="trip_stats">
 
-                <span class="stat_item">
+                    <span class="stat_item">
 
-                    <%= label_tag "Distance" %>
-                    <%= trip[:distance] %> Parsecs
+                        <%= label_tag "Distance" %>
+                        <%= trip[:distance] %> Parsecs
 
-                </span>
+                    </span>
 
-                <span class="stat_item">
+                    <span class="stat_item">
 
-                    <%= label_tag "Speed" %>
-                    <%= trip[:rocket].speed %> Parsecs/hr
+                        <%= label_tag "Speed" %>
+                        <%= trip[:rocket].speed %> Parsecs/hr
 
-                </span>
+                    </span>
 
-                <span class="stat_item">
+                    <span class="stat_item">
 
-                    <%= label_tag "Duration" %>
-                    <%= trip[:duration] %> hours
+                        <%= label_tag "Duration" %>
+                        <%= trip[:duration] %> hours
 
-                </span>
+                    </span>
+
+                </div>
+
+                <div class="carrier_ship">
+
+                    You are flying with <%= link_to trip[:carrier].name, carrier_path(trip[:carrier]) %> on the <%= link_to trip[:rocket].name, rocket_slug_path("#{trip[:rocket].name}") %>
+
+                </div>
+
+                
 
             </div>
 
