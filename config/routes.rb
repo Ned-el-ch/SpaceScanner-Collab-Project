@@ -14,4 +14,6 @@ Rails.application.routes.draw do
     get 'logout', to: 'sessions#destroy', as: 'logout'
     get 'trips', to: 'users#trips'#, as: 'trips'
     get 'account', to: 'users#show'#, as: 'account'
+
+    get '/planets/:slug', to: 'planets#slug'
 end
