@@ -8,10 +8,9 @@
 
         <div class="trip">
 
-            <%# <input id="collapsible" class="toggle" type="checkbox"> %>
-            <%= check_box_tag "collapsible#{index + 1}", class: "toggle" %>
+            <input id="collapsible<%= "#{index}" %>" class="toggle" type="checkbox">
 
-            <label for="collapsible<%= "#{index + 1}" %>" class="lbl-toggle to_from">
+            <label for="collapsible<%= "#{index}" %>" class="lbl-toggle">
 
                 <span class="to_from">
 
