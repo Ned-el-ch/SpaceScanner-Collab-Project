@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     get 'logout', to: 'sessions#destroy', as: 'logout'
     get 'trips', to: 'users#trips'#, as: 'trips'
     get 'account', to: 'users#show'#, as: 'account'
+    get 'easteregg', to: 'application#easteregg', as: 'easteregg'
 
     match 'search(/:search)', :to => 'trips#search', :as => :search, via: [:get, :post]
 
