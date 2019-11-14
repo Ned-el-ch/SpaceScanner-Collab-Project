@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
       else
         @current_user = nil
       end
+      
     end
 
     def all_planets
