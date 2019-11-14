@@ -11,7 +11,8 @@ User.destroy_all
 
         email: Faker::Internet.email,
         password: "pass",
-        name: Faker::Movies::HarryPotter.character
+        name: Faker::Movies::HarryPotter.character,
+        sparklegasm: rand(100..10000)
 
     )
 
@@ -72,7 +73,8 @@ end
         destination_id: Planet.all.sample.id,
         rocket: Rocket.all.sample,
         carrier: Carrier.all.sample,
-        takeoff_time: DateTime.iso8601("#{rand(3008..3016)}-0#{rand(1..9)}-#{rand(10..28)}", Date::ENGLAND)
+        takeoff_time: DateTime.iso8601("#{rand(3008..3016)}-0#{rand(1..9)}-#{rand(10..28)}", Date::ENGLAND),
+        price: rand(50..3000)
 
     )
 

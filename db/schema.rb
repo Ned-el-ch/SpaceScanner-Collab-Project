@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_12_125030) do
+ActiveRecord::Schema.define(version: 2019_11_14_140918) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer "price"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2019_11_12_125030) do
     t.datetime "takeoff_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "price"
   end
 
   create_table "users", force: :cascade do |t|
@@ -64,6 +65,7 @@ ActiveRecord::Schema.define(version: 2019_11_12_125030) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
+    t.integer "sparklegasm"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

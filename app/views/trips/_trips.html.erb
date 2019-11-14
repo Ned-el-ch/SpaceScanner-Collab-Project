@@ -46,6 +46,9 @@
                 <div class="carrier_ship">
 
                     You are flying with <%= link_to trip[:carrier].name, carrier_slug_path(trip[:carrier].name) %> on the <%= link_to trip[:rocket].name, rocket_slug_path("#{trip[:rocket].name}") %>
+                    <br>
+                    <br>
+                    Price: <%= trip[:price] %> sparklegasm
 
                 </div>
 
