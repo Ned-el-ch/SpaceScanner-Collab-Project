@@ -15,6 +15,19 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find(session[:user_id])
+    @trips = []
+    @user.trips.each_with_index do |trip, index|
+      @trips << {
+        origin: Planet.find(trip.origin_id), 
+        destination: Planet.find(trip.destination_id), 
+        rocket: trip.rocket, 
+        carrier: trip.carrier, 
+        distance: Planet.find(trip.origin_id).distance_from_earth + Planet.find(trip.destination_id).distance_from_earth, 
+        duration: Planet.find(trip.destination_id).distance_from_earth/trip.rocket.speed}
+    end 
+    @total_distance = @trips.map {|arr| arr[:distance]}.sum
+    @total_time = @trips.map {|arr| arr[:duration]}.sum
   end
 
   # GET /users/new
