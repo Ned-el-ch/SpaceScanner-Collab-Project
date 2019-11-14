@@ -257,7 +257,7 @@ input[type=submit] {
 
 select>option{ 
     height:20px;
-  }
+}
 
 #origin_id, #destination_id, #email, #password, #user_email, #user_password, #user_password_confirmation {
 
@@ -274,8 +274,7 @@ select>option{
     width: 90%;
     border-radius: 25px;
     outline: none;
-
-    /* float: left; */
+    background: rgba(255, 255, 255, 0.075);
 
 }
 
@@ -318,6 +317,7 @@ div.things {
 
     text-align: center;
     background-color: rgba(0, 0, 0, 0);
+    background: rgba(255, 255, 255, 0.075);
     border: solid 3px var(--heading-color);
     color: var(--font-color);
     padding: 30px 32px;
@@ -340,7 +340,7 @@ div.date_container {
 
 .field_with_errors {
     padding: 2px;
-    background-color: rgba(255, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
     display: block;
     border-radius: 40px;
 
@@ -396,14 +396,6 @@ div#error_explanation > ul > li {
     
 }
 
-/* .stat_item {
-
-    float: left;
-    padding: 3px;
-    display: block;
-
-} */
-
 .trip_stats {
     
     text-align:justify;
@@ -435,6 +427,7 @@ span.stat_item > label {
 
     padding: 3px;
     font-size: 16px;
+    text-align: center;
     padding-bottom: 2%;
 
 }
@@ -458,13 +451,13 @@ a:visited {
 
 .trip {
     margin-bottom: 1.2rem 0;
-  }
+}
   
-  input[type='checkbox'] {
+input[type='checkbox'] {
     display: none;
-  }
+}
   
-  .lbl-toggle {
+.lbl-toggle {
     display: block;
   
     font-weight: bold;
@@ -482,143 +475,49 @@ a:visited {
   
     border-radius: 7px;
     transition: all 0.25s ease-out;
-  }
-  
-  .lbl-toggle:hover {
-    color: #7C5A0B;
-  }
-  
-  .lbl-toggle::before {
-    content: ' ';
-    display: inline-block;
-  
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-left: 5px solid currentColor;
-    vertical-align: middle;
-    margin-right: .7rem;
-    transform: translateY(-2px);
-  
-    transition: transform .2s ease-out;
-  }
-  
-  .toggle:checked + .lbl-toggle::before {
-    transform: rotate(90deg) translateX(-3px);
-  }
-  
-  .collapsible-content {
-    max-height: 0px;
-    overflow: hidden;
-    transition: max-height .25s ease-in-out;
-  }
-  
-  .toggle:checked + .lbl-toggle + .collapsible-content {
-    max-height: 350px;
-  }
-  
-  .toggle:checked + .lbl-toggle {
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-  
-  .collapsible-content .content-inner {
-    background: rgba(250, 224, 66, .2);
-    border-bottom: 1px solid rgba(250, 224, 66, .45);
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-    padding: .5rem 1rem;
-  }
-
-/* .trip {
-    margin-bottom: 1.2rem 0;
-} */
-
-/* input[type='checkbox'] {
-
-    display: none;
-
-} */
-
-/* .lbl-toggle {
-
-    display: block;
-
-    font-weight: bold;
-    font-family: monospace;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    text-align: center;
-
-    padding: 1rem;
-
-    color: rgb(214, 156, 10);
-    background: rgba(0, 0, 0, 0);
-
-    cursor: pointer;
-
-    border-radius: 7px;
-    transition: all 0.25s ease-out;
-
 }
-
+  
 .lbl-toggle:hover {
-
     color: #7C5A0B;
-
 }
-
-.lbl-toggle::before{
-
+  
+.lbl-toggle::before {
     content: ' ';
     display: inline-block;
-
+  
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
     border-left: 5px solid currentColor;
-
     vertical-align: middle;
     margin-right: .7rem;
     transform: translateY(-2px);
-
+  
     transition: transform .2s ease-out;
-
 }
 
-.collapsible-content .content-inner {
-
-    background: rgba(250, 224, 66, .2);
-    border-bottom: 1px solid rgba(250, 224, 66, .45);
-
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-    padding: .5rem 1rem;
-
+.toggle:checked + .lbl-toggle::before {
+    transform: rotate(90deg) translateX(-3px);
 }
 
 .collapsible-content {
-
     max-height: 0px;
     overflow: hidden;
-
     transition: max-height .25s ease-in-out;
 }
 
 .toggle:checked + .lbl-toggle + .collapsible-content {
-
     max-height: 350px;
-
-}
-
-.toggle:checked + .lbl-toggle::before {
-
-    transform: rotate(90deg) translateX(-3px);
-
 }
 
 .toggle:checked + .lbl-toggle {
-
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
-
 }
- */
+
+.collapsible-content .content-inner {
+    background: rgba(250, 224, 66, .2);
+    border-bottom: 1px solid rgba(250, 224, 66, .45);
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    padding: .5rem 1rem;
+}

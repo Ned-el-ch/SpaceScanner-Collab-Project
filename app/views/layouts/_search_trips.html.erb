@@ -1,23 +1,34 @@
 <div class="trip_search">
 
     <%= form_tag "/bookings", method: :get do %>
-    <div class="things">
-        <div class="thing">
-            <%= label_tag 'from', nil, class: 'input_label'%>
-            <%= select_tag :origin_id, options_from_collection_for_select(Planet.all.sort_by{|p| p.name}, :id, :name), {:prompt => 'Select Origin'}%><br/>
-            
-        </div>
-        <div class="thing">
 
-            <%= label_tag 'to', nil, class: 'input_label'%>
-            <%= select_tag :destination_id, options_from_collection_for_select(Planet.all.sort_by{|p| p.name}, :id, :name), prompt: 'Select Destination'%><br/>
+        <div class="things">
+
+            <div class="thing">
+
+                <%= label_tag 'from', nil, class: 'input_label'%>
+                <%= select_tag :origin_id, options_from_collection_for_select(Planet.all.sort_by{|p| p.name}, :id, :name), {:prompt => 'Select Origin'}%><br/>
+
+            </div>
+
+            <div class="thing">
+
+                <%= label_tag 'to', nil, class: 'input_label'%>
+                <%= select_tag :destination_id, options_from_collection_for_select(Planet.all.sort_by{|p| p.name}, :id, :name), prompt: 'Select Destination'%><br/>
+
+            </div>
+
         </div>
-    </div>
-    <div class="date_container">
-        <%= label_tag 'departure', nil, class: 'input_label'%>
-        <%= date_select "date", "takeoff_date", options = {start_year: 3008, end_year: 3022, prompt: { day: 'Day', month: 'Month', year: 'Year' }}%>
-    </div>
-    <%= submit_tag 'Search'%>
+
+        <div class="date_container">
+
+            <%= label_tag 'departure', nil, class: 'input_label'%>
+            <%= date_select "date", "takeoff_date", options = {start_year: 3008, end_year: 3022, prompt: { day: 'Day', month: 'Month', year: 'Year' }}%>
+
+        </div>
+
+        <%= submit_tag 'Search'%>
+
     <% end%>
 
 </div>

@@ -1,0 +1,58 @@
+<div class="my_trips">
+
+    <% @trips.each_with_index do |trip, index| %>
+
+        <div class="trip">
+
+            <input id="collapsible<%= "#{index}" %>" class="toggle" type="checkbox">
+
+            <label for="collapsible<%= "#{index}" %>" class="lbl-toggle">
+
+                <span class="to_from">
+
+                    Trip from <%= link_to trip[:origin].name, planet_slug_path("#{trip[:origin].name}")%> to <%= link_to trip[:destination].name, planet_slug_path("#{trip[:destination].name}")%>
+
+                </span>
+
+            </label>
+
+            <div class="collapsible-content">
+
+                <div class="trip_stats">
+
+                    <span class="stat_item">
+
+                        <%= label_tag "Distance" %>
+                        <%= trip[:distance] %> Parsecs
+
+                    </span>
+
+                    <span class="stat_item">
+
+                        <%= label_tag "Speed" %>
+                        <%= trip[:rocket].speed %> Parsecs/hr
+
+                    </span>
+
+                    <span class="stat_item">
+
+                        <%= label_tag "Duration" %>
+                        <%= trip[:duration] %> hours
+
+                    </span>
+
+                </div>
+
+                <div class="carrier_ship">
+
+                    You are flying with <%= link_to trip[:carrier].name, carrier_slug_path(trip[:carrier].name) %> on the <%= link_to trip[:rocket].name, rocket_slug_path("#{trip[:rocket].name}") %>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    <% end %>
+
+</div>

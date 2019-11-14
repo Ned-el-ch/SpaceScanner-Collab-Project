@@ -15,7 +15,7 @@ class TripsController < ApplicationController
                     rocket: trip.rocket, 
                     carrier: trip.carrier, 
                     distance: Planet.find(trip.origin_id).distance_from_earth + Planet.find(trip.destination_id).distance_from_earth, 
-                    duration: Planet.find(trip.origin_id).distance_from_earth + Planet.find(trip.destination_id).distance_from_earth/trip.rocket.speed}
+                    duration: Planet.find(trip.destination_id).distance_from_earth/trip.rocket.speed}
                 
             end
 
