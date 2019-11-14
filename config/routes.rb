@@ -18,5 +18,6 @@ Rails.application.routes.draw do
     get 'trips', to: 'users#trips'#, as: 'trips'
     get 'account', to: 'users#show'#, as: 'account'
 
+    match 'search(/:search)', :to => 'trips#search', :as => :search, via: [:get, :post]
 
 end
