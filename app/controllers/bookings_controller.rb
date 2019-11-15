@@ -29,7 +29,7 @@ class BookingsController < ApplicationController
             booking.trip = Trip.find(params[:trip][:id])
             booking.price = Trip.find(params[:trip][:price])
             booking.rating = 5
-            current_user.sparklegasm -= booking.price
+            current_user.sparklegasm -= Trip.find(params[:trip][:price])
 
             user.save
 
