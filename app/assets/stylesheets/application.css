@@ -21,8 +21,8 @@
     --font-color: #f6f6ff;
     --bg-color: #161625;
     --bg-image: linear-gradient(to bottom right, rgb(46, 46, 73), rgb(12, 12, 20));
-    --heading-color: rgb(223, 164, 3);
-    --logo-color:  rgb(223, 164, 3);
+    --heading-color: rgb(243, 179, 3);
+    --logo-color:  rgb(243, 179, 3);
 
 }
 
@@ -543,7 +543,7 @@ input[type='checkbox'] {
   
     padding: 1rem;
   
-    color: rgb(201, 146, 7);
+    color: var(--heading-color);
     background: rgba(0, 0, 0, 0);
   
     cursor: pointer;

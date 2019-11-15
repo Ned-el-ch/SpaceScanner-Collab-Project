@@ -10,7 +10,7 @@
 
                 <span class="to_from">
 
-                    Trip from <%= link_to trip[:origin].name, planet_slug_path("#{trip[:origin].name}")%> to <%= link_to trip[:destination].name, planet_slug_path("#{trip[:destination].name}")%> 
+                    Adventure from <%= link_to trip[:origin].name, planet_slug_path("#{trip[:origin].name}")%> to <%= link_to trip[:destination].name, planet_slug_path("#{trip[:destination].name}")%> 
                     
                     <% if (request.path == "/search") %>
 
