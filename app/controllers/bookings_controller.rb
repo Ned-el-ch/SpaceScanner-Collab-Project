@@ -30,9 +30,9 @@ class BookingsController < ApplicationController
             booking.price = Trip.find(params[:trip][:price])
             booking.rating = 5
             current_user.sparklegasm -= params[:trip][:price].to_i
-
+byebug
             current_user.save
-
+byebug
             booking.save
 
             redirect_to trips_path
