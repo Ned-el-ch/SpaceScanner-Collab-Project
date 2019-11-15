@@ -2,14 +2,7 @@ class BookingsController < ApplicationController
 
     def index
 
-        # @trips = []
-
         @valid_trips = Trip.where(origin_id: params[:origin_id], destination_id: params[:destination_id])
-        # @trips = {
-        #     origin: Planet.find(params[:origin_id]), 
-        #     destination: Planet.find(params[:destination_id]),
-        #     date: "#{params[:date_takeoff_date_1i]}-#{params[:date_takeoff_date_2i]}-#{params[:date_takeoff_date_3i]}"
-        # }
 
         @trips = []
         @valid_trips.each_with_index do |trip, index|
@@ -22,7 +15,7 @@ class BookingsController < ApplicationController
                 duration: Planet.find(trip.destination_id).distance_from_earth/trip.rocket.speed}
             
         end
-        # byebug
+
         render "/trips/_trips"
     end 
 
@@ -36,10 +29,9 @@ class BookingsController < ApplicationController
             booking.trip = Trip.find(params[:trip][:id])
             booking.price = Trip.find(params[:trip][:price])
             booking.rating = 5
+            current_user.sparklegasm -= booking.price
 
-
-
-        byebug
+            user.save
 
             booking.save
 
