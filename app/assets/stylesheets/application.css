@@ -453,7 +453,7 @@ div#error_explanation > ul > li {
     z-index: -1;
     position: relative;
     top: 0;
-    filter: blur(2px);
+    filter: blur(1px);
     
 }
 
