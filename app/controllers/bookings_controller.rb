@@ -24,15 +24,16 @@ class BookingsController < ApplicationController
         if current_user
 
             booking = Booking.new
+            user = current_user
 
             booking.user = current_user
             booking.trip = Trip.find(params[:trip][:id])
             booking.price = Trip.find(params[:trip][:price])
             booking.rating = 5
-            current_user.sparklegasm -= params[:trip][:price].to_i
-byebug
-            current_user.save
-byebug
+            # user.sparklegasm -= params[:trip][:price].to_i
+# byebug
+            # user.update(sparklegasm: user.sparklegasm - params[:trip][:price].to_i)
+# byebug
             booking.save
 
             redirect_to trips_path

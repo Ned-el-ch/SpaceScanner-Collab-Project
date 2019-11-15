@@ -1,10 +1,21 @@
-<h2><%=@carrier.name%></h2>
+<h2><%= @carrier.name %></h2>
 
-<p>Range: <%= @carrier.range %></p>
-<br>
-<p>Listed flights:</p><br>
-<% @carrier.trips.each do |trip| %>
+<div  class="planet">
+
     <ul>
-    <%= link_to "#{Planet.find(trip.origin_id).name} to #{Planet.find(trip.destination_id).name}", trip_path(trip)%>
+
+        <li>Range: <%= @carrier.range %></li>
+
+        <li>Listed Adventures:</li>
+
+    <% @carrier.trips.each do |trip| %>
+
+        <li>
+            <%= link_to "#{Planet.find(trip.origin_id).name} to #{Planet.find(trip.destination_id).name}", trip_path(trip)%>
+        </li>
+
+    <% end %>
+
     </ul>
-<% end %>
+
+</div>
