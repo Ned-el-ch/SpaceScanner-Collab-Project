@@ -2,12 +2,21 @@
 
 <div class="planet">
 
-    <p>Distance from Earth: <%= @planet.distance_from_earth %> Parsecs</p>
-    <p>Gravity: <%= @planet.gravity %> g</p>
-    <p>Hostility: <%= @planet.hostility %></p>
-    <p>Population: <%= @planet.population %></p>
-    <% if !@planet.breathable_atmosphere %>
-        <p>Uh oh, somersault jump! Grass tastes bad round here!</p>
-    <% end %>
+    <ul>
+
+        <li>Distance from Earth: <%= @planet.distance_from_earth %> Parsecs</li>
+        <li>Gravity: <%= @planet.gravity %> g</li>
+        <li>Hostility: <%= @planet.hostility %></li>
+        <li>Population: <%= @planet.population %></li>
+
+        <% if !@planet.breathable_atmosphere %>
+
+            <li>Uh oh, somersault jump! Grass tastes bad round here!</li>
+
+        <% end %>
+
+    </ul>
+
     <%= image_tag "#{@planet.name}", :alt => "planet_image", class: "planet_image" %>
+
 </div>
