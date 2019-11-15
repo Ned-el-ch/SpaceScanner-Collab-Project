@@ -14,5 +14,11 @@ class ApplicationController < ActionController::Base
         Planet.all.sort_by{|p| p.name}
         
     end
+
+    def easteregg
+
+      render "easteregg/index"
+      
+    end
     
   end
