@@ -388,7 +388,7 @@ div#error_explanation > ul > li {
 
 }
 
-.trip, .planet {
+.trip {
 
     padding: 1%;
     padding-left: 3%;
@@ -405,7 +405,28 @@ div#error_explanation > ul > li {
 
 }
 
-/* .planet > p */
+.planet {
+
+    padding: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
+    border: solid var(--logo-color);
+    border-radius: 40px;
+    background: rgba(255, 255, 255, 0.25);
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    height: 400px;
+
+}
+
+.planet > p {
+
+    font-size: 18px;
+    padding: 2%;
+    
+}
 
 .trip_stats {
     
