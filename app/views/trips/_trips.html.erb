@@ -10,8 +10,13 @@
 
                 <span class="to_from">
 
-                    Trip from <%= link_to trip[:origin].name, planet_slug_path("#{trip[:origin].name}")%> to <%= link_to trip[:destination].name, planet_slug_path("#{trip[:destination].name}")%>
+                    Trip from <%= link_to trip[:origin].name, planet_slug_path("#{trip[:origin].name}")%> to <%= link_to trip[:destination].name, planet_slug_path("#{trip[:destination].name}")%> 
+                    
+                    <% if (request.path == "/search") %>
 
+                        <br/><br/><%= link_to "book now:  #{trip[:price]} sparklegasms", new_booking_path(trip: trip) %> 
+
+                    <% end%>
                 </span>
 
             </label>
@@ -48,7 +53,6 @@
                     You are flying with <%= link_to trip[:carrier].name, carrier_slug_path(trip[:carrier].name) %> on the <%= link_to trip[:rocket].name, rocket_slug_path("#{trip[:rocket].name}") %>
                     <br>
                     <br>
-                    Price: <%= trip[:price] %> sparklegasm
 
                 </div>
 

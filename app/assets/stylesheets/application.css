@@ -384,10 +384,11 @@ div#error_explanation > ul > li {
     padding-right: 10%;
     padding-top: 1%;
     padding-bottom: 1%;
-    
+    /* display: inline-block; */
+
 }
 
-.trip {
+.trip, .planet {
 
     padding: 1%;
     padding-left: 3%;
@@ -399,7 +400,12 @@ div#error_explanation > ul > li {
     margin-right: 10%;
     margin-top: 2%;
     margin-bottom: 2%;
+    /* display: inline-block; */
+
+
 }
+
+/* .planet > p */
 
 .trip_stats {
     
@@ -602,3 +608,14 @@ input[type='checkbox'] {
 }
 
 body {background-color: black}
+
+/* .buy-button {
+
+    width: 15%;
+    height: 70px;
+    border-radius: 40px;
+    outline: none;
+    font-size: 16px;
+    display: inline-block;
+    
+} */

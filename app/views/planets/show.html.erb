@@ -1,10 +1,13 @@
 <h2><%=@planet.name%></h2>
 
-<p><%= @planet.name %></p>
-<p>Distance from Earth: <%= @planet.distance_from_earth %> Parsecs</p>
-<p>Gravity: <%= @planet.gravity %> g</p>
-<p>Hostility: <%= @planet.hostility %></p>
-<p>Population: <%= @planet.population %></p>
-<% if !@planet.breathable_atmosphere %>
-    <p>Uh oh, somersault jump! Grass tastes bad round here!</p>
-<% end %>
+<div class="planet">
+
+    <p>Distance from Earth: <%= @planet.distance_from_earth %> Parsecs</p>
+    <p>Gravity: <%= @planet.gravity %> g</p>
+    <p>Hostility: <%= @planet.hostility %></p>
+    <p>Population: <%= @planet.population %></p>
+    <% if !@planet.breathable_atmosphere %>
+        <p>Uh oh, somersault jump! Grass tastes bad round here!</p>
+    <% end %>
+
+</div>

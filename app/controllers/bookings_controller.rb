@@ -26,4 +26,30 @@ class BookingsController < ApplicationController
         render "/trips/_trips"
     end 
 
+    def new
+
+        if current_user
+
+            booking = Booking.new
+
+            booking.user = current_user
+            booking.trip = Trip.find(params[:trip][:id])
+            booking.price = Trip.find(params[:trip][:price])
+            booking.rating = 5
+
+
+
+        byebug
+
+            booking.save
+
+            redirect_to trips_path
+
+        else
+
+            redirect_to login_path
+
+        end
+    end
+
 end

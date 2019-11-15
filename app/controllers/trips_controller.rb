@@ -53,11 +53,13 @@ class TripsController < ApplicationController
                     carrier: trip.carrier, 
                     distance: Planet.find(trip.origin_id).distance_from_earth + Planet.find(trip.destination_id).distance_from_earth, 
                     duration: Planet.find(trip.destination_id).distance_from_earth/trip.rocket.speed, 
-                    price: trip.price
-
+                    price: trip.price,
+                    id: trip.id
                 }
 
             end
+
+            @trips = @trips.sort_by {|trip| trip[:price]}
 
             render "/trips/_trips"
 
