@@ -14,7 +14,7 @@
                     
                     <% if (request.path == "/search") %>
 
-                        <br/><br/><%= link_to "book now:  #{trip[:price]} sparklegasms", new_booking_path(trip: trip) %> 
+                        <br/><br/><%= link_to "book now:  #{trip[:price]} sparklegasms", new_booking_path(trip: trip), class: "book-now" %> 
 
                     <% end%>
                 </span>
