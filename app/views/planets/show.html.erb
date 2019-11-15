@@ -9,5 +9,5 @@
     <% if !@planet.breathable_atmosphere %>
         <p>Uh oh, somersault jump! Grass tastes bad round here!</p>
     <% end %>
-
+    <%= image_tag "#{@planet.name}", :alt => "planet_image", class: "planet_image" %>
 </div>
